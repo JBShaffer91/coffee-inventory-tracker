@@ -14,14 +14,13 @@ function AddCoffeeForm(props) {
 
   const handleAddNewCoffee = (event) => {
     event.preventDefault();
-    const newCoffee = {
+    const coffeeData = {
       name: name,
       origin: origin,
       price: price,
-      roast: roast,
-      poundsLeft: quantity * 130 // Assuming each sack has 130 pounds
+      roast: roast
     };
-    props.onAddCoffee(newCoffee);
+    props.onAddOrUpdateCoffee(coffeeData, quantity);
     setName('');
     setOrigin('');
     setPrice('');
@@ -31,7 +30,10 @@ function AddCoffeeForm(props) {
 
   const handleAddToExistingStock = (event) => {
     event.preventDefault();
-    props.onAddStock(selectedCoffee, quantity);
+    const coffeeData = {
+      name: selectedCoffee
+    };
+    props.onAddOrUpdateCoffee(coffeeData, quantity);
     setSelectedCoffee('');
     setQuantity(1);
   };
