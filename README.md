@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Coffee Shop Inventory Management
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based web application designed to manage the inventory of different coffee types in a coffee shop. The application provides CRUD (Create, Read, Update, Delete) operations for managing coffee types and a Bag feature for users to add their favorite coffees.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Coffee List: Displays a list of available coffees with details such as name, origin, price, roast, and quantity.
 
-### `npm start`
+- Add Coffee: Users can add a new type of coffee to the inventory.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Edit Coffee: Allows modification of existing coffee details.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Delete Coffee: Remove a coffee type from the inventory.
 
-### `npm test`
+- Bag Feature: Users can add coffees to their bag, adjust quantities, and place orders.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Responsive Design: Styled with a modern Navy Blue and Bone White color palette and a consistent Box Model design.
 
-### `npm run build`
+## Technology
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React: Used for building the user interface components.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node: The application runs on Node version v19.8.1.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- CSS: Styling and layout.
 
-### `npm run eject`
+## Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+git clone https://github.com/JBShaffer91/coffee-inventory-tracker.git
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Navigate to the project directory:
+```
+cd coffee-shop-inventory-management
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Install the required dependencies:
+```
+npm install
+```
+4. Start the development server:
+```
+npm start
+```
+The application will open in your default web browser at http://localhost:3000/.
 
-## Learn More
+## Usage
+1. Viewing Coffees: Simply scroll through the Coffee List to see all available coffees.
+2. Adding a New Coffee: Use the "Add New Coffee Type" form to input details and click "Add New Coffee Type".
+3. Editing a Coffee: Click on a coffee from the list to open the edit modal. Modify the details and click "Save".
+4. Deleting a Coffee: In the edit modal, click "Delete" to remove the coffee from the list.
+5. Using the Bag:
+- Click "Add to Bag" next to a coffee to add it to your bag.
+- In the Bag section, adjust quantities using the "+" and "-" buttons.
+- Click "Order" to place your order. If there's insufficient stock, you'll be notified.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
+MIT License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Copyright (c) 2023 Justin Shaffer
 
-### Analyzing the Bundle Size
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
