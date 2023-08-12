@@ -20,6 +20,8 @@ A React-based web application designed to manage the inventory of different coff
 
 - React: Used for building the user interface components.
 
+- prop-types: Runtime type checking for React props and similar objects.
+
 - Node: The application runs on Node version v19.8.1.
 
 - CSS: Styling and layout.
