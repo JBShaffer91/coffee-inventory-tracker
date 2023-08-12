@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import './AddCoffeeForm.css';
 
 function AddCoffeeForm(props) {
   const [name, setName] = useState('');
@@ -39,7 +41,7 @@ function AddCoffeeForm(props) {
   };
 
   return (
-    <div>
+    <div className="add-coffee-container">
       <h2>Manage Coffee Inventory</h2>
 
       {/* Add a New Coffee Type */}
@@ -99,5 +101,12 @@ function AddCoffeeForm(props) {
     </div>
   );
 }
+
+AddCoffeeForm.propTypes = {
+  onAddOrUpdateCoffee: PropTypes.func.isRequired,
+  coffees: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired
+  })).isRequired
+};
 
 export default AddCoffeeForm;

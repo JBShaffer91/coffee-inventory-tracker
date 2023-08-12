@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import CoffeeItem from './CoffeeItem';
 import CoffeeModal from './CoffeeModal';
+import './CoffeeList.css';
 
 function CoffeeList(props) {
   const [selectedCoffee, setSelectedCoffee] = useState(null);
@@ -37,6 +39,7 @@ function CoffeeList(props) {
                 roast={coffee.roast}
                 quantity={coffee.poundsLeft}
                 onClick={() => handleCoffeeClick(coffee)}
+                onAddToBag={() => props.onAddToBag(coffee)}
               />
             );
           })}
@@ -53,5 +56,19 @@ function CoffeeList(props) {
     </div>
   );
 }
+
+CoffeeList.propTypes = {
+  coffees: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    origin: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    roast: PropTypes.string.isRequired,
+    poundsLeft: PropTypes.number.isRequired
+  })).isRequired,
+  onAddToBag: PropTypes.func.isRequired,
+  onDeleteCoffee: PropTypes.func.isRequired,
+  onEditCoffee: PropTypes.func.isRequired
+};
 
 export default CoffeeList;

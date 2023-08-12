@@ -1,0 +1,35 @@
+.add-coffee-container {
+  background-color: #f4e8de;
+  border: 1px solid #001f3f;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-coffee-container h2,
+.add-coffee-container h3 {
+  color: #001f3f;
+}
+
+.add-coffee-container input,
+.add-coffee-container select,
+.add-coffee-container button {
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #001f3f;
+  border-radius: 4px;
+}
+
+.add-coffee-container button {
+  background-color: #001f3f;
+  color: #f4e8de;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-coffee-container button:hover {
+  background-color: #f4e8de;
+  color: #001f3f;
+  border: 1px solid #001f3f;
+}

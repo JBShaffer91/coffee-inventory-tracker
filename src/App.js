@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import CoffeeList from './components/CoffeeList';
 import AddCoffeeForm from './components/AddCoffeeForm';
+import Bag from './components/Bag';
 import Footer from './components/Footer';
+import './App.css';
 
 function App() {
   const [coffees, setCoffees] = useState([
@@ -46,10 +48,67 @@ function App() {
     }
   };
 
+  const [bag, setBag] = useState([]);
+
+  const handleAddToBag = (coffeeToAdd) => {
+    setBag(prevBag => {
+      const existingItem = prevBag.find(item => item.id === coffeeToAdd.id);
+      if (existingItem) {
+        return prevBag.map(item => 
+          item.id === coffeeToAdd.id ? {...item, quantity: item.quantity + 1} : item
+        );
+      } else {
+        return [...prevBag, {...coffeeToAdd, quantity: 1}];
+      }
+    });
+  };
+
+  const handleUpdateBagItem = (coffeeId, newQuantity) => {
+    setBag(prevBag => 
+      prevBag.map(item => 
+        item.id === coffeeId ? {...item, quantity: newQuantity} : item
+      )
+    );
+  };
+
+  const handleRemoveFromBag = (coffeeId) => {
+    setBag(prevBag => prevBag.filter(item => item.id !== coffeeId));
+  };
+
+  const handleOrder = () => {
+    let isOrderValid = true;
+    let outOfStockItems = [];
+  
+    bag.forEach(item => {
+      const coffee = coffees.find(c => c.id === item.id);
+      if (item.quantity > coffee.poundsLeft) {
+        isOrderValid = false;
+        outOfStockItems.push(coffee.name);
+      }
+    });
+  
+    if (isOrderValid) {
+      setBag(prevBag => {
+        const updatedCoffees = [...coffees];
+        prevBag.forEach(item => {
+          const coffeeIndex = updatedCoffees.findIndex(c => c.id === item.id);
+          if (coffeeIndex !== -1) {
+            updatedCoffees[coffeeIndex].poundsLeft -= item.quantity;
+          }
+        });
+        setCoffees(updatedCoffees);
+        return [];
+      });
+    } else {
+      alert(`Sorry, we don't have enough stock for the following items: ${outOfStockItems.join(', ')}`);
+    }
+  };  
+
   return (
     <div className="App">
       <Header />
-      <CoffeeList coffees={coffees} onDeleteCoffee={handleDeleteCoffee} onEditCoffee={handleEditCoffee} />
+      <Bag bagItems={bag} onUpdateItem={handleUpdateBagItem} onRemoveItem={handleRemoveFromBag} onOrder={handleOrder} />
+      <CoffeeList coffees={coffees} onAddToBag={handleAddToBag} onDeleteCoffee={handleDeleteCoffee} onEditCoffee={handleEditCoffee} />
       <AddCoffeeForm onAddOrUpdateCoffee={handleAddOrUpdateCoffee} coffees={coffees} />
       <Footer />
     </div>

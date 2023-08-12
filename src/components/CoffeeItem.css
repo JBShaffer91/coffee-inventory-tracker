@@ -1,0 +1,33 @@
+td {
+  vertical-align: middle;
+}
+
+td span.almost-gone {
+  color: #FFA500;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+td span.out-of-stock {
+  color: #FF0000;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+button {
+  background-color: #001F3F;
+  color: #EAE0D5;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #001a33;
+}
+
+button:active {
+  transform: scale(0.95);
+}

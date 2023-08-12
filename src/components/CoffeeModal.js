@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import './CoffeeModal.css';
 
 function CoffeeModal(props) {
   const { coffee, onClose, onDelete, onEdit } = props;
 
-  // Initialize the local state with the coffee passed as a prop
   const [editedCoffee, setEditedCoffee] = useState({ ...coffee });
 
-  // Handle the save action
   const handleSave = () => {
     onEdit(editedCoffee);
     onClose();
@@ -42,5 +42,19 @@ function CoffeeModal(props) {
     </div>
   );
 }
+
+CoffeeModal.propTypes = {
+  coffee: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    origin: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    roast: PropTypes.string.isRequired,
+    harvestDate: PropTypes.string,
+    roastDate: PropTypes.string
+  }).isRequired,
+  onClose: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired
+};
 
 export default CoffeeModal;
