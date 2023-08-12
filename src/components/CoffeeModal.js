@@ -5,7 +5,15 @@ import './CoffeeModal.css';
 function CoffeeModal(props) {
   const { coffee, onClose, onDelete, onEdit } = props;
 
-  const [editedCoffee, setEditedCoffee] = useState({ ...coffee });
+  const [editedCoffee, setEditedCoffee] = useState({
+    id: coffee.id,
+    name: coffee.name || '',
+    origin: coffee.origin || '',
+    price: coffee.price || '',
+    roast: coffee.roast || '',
+    harvestDate: coffee.harvestDate || '',
+    roastDate: coffee.roastDate || ''
+  });
 
   const handleSave = () => {
     onEdit(editedCoffee);
