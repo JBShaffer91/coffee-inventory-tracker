@@ -2,7 +2,7 @@ import React from 'react';
 
 function CoffeeItem(props) {
   return (
-    <tr>
+    <tr onClick={props.onClick}>
       <td>{props.name}</td>
       <td>{props.origin}</td>
       <td>{props.price}</td>
