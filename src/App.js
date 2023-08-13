@@ -37,16 +37,18 @@ function App() {
 
   const handleAddOrUpdateCoffee = (newCoffee, quantity) => {
     const existingCoffeeIndex = coffees.findIndex(c => c.name === newCoffee.name);
-
+  
     if (existingCoffeeIndex !== -1) {
       const updatedCoffees = [...coffees];
       updatedCoffees[existingCoffeeIndex].poundsLeft += 130 * quantity;
       setCoffees(updatedCoffees);
     } else {
+      const newCoffeeId = Math.max(...coffees.map(c => c.id)) + 1;
+      newCoffee.id = newCoffeeId;
       newCoffee.poundsLeft = 130 * quantity;
       setCoffees(prevCoffees => [...prevCoffees, newCoffee]);
     }
-  };
+  };  
 
   const [bag, setBag] = useState([]);
 
@@ -104,11 +106,13 @@ function App() {
     }
   };  
 
+  const validCoffees = coffees.filter(coffee => coffee.origin && coffee.price && coffee.roast);
+
   return (
     <div className="App">
       <Header />
       <Bag bagItems={bag} onUpdateItem={handleUpdateBagItem} onRemoveItem={handleRemoveFromBag} onOrder={handleOrder} />
-      <CoffeeList coffees={coffees} onAddToBag={handleAddToBag} onDeleteCoffee={handleDeleteCoffee} onEditCoffee={handleEditCoffee} />
+      <CoffeeList coffees={validCoffees} onAddToBag={handleAddToBag} onDeleteCoffee={handleDeleteCoffee} onEditCoffee={handleEditCoffee} />
       <AddCoffeeForm onAddOrUpdateCoffee={handleAddOrUpdateCoffee} coffees={coffees} />
       <Footer />
     </div>

@@ -6,7 +6,7 @@ function AddCoffeeForm(props) {
   const [name, setName] = useState('');
   const [origin, setOrigin] = useState('');
   const [price, setPrice] = useState('');
-  const [roast, setRoast] = useState('');
+  const [roast, setRoast] = useState('light');
   const [quantity, setQuantity] = useState(1);
   const [selectedCoffee, setSelectedCoffee] = useState('');
 
@@ -16,6 +16,18 @@ function AddCoffeeForm(props) {
 
   const handleAddNewCoffee = (event) => {
     event.preventDefault();
+
+    if (!name || !origin || !price || !roast) {
+    alert("Please fill out all the fields.");
+    return;
+    }
+
+    const existingCoffee = props.coffees.find(c => c.name === name);
+    if (existingCoffee) {
+      alert("A coffee with this name already exists. Please choose a different name.");
+      return;
+    }
+
     const coffeeData = {
       name: name,
       origin: origin,
