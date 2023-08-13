@@ -37,7 +37,7 @@ function CoffeeList(props) {
                 origin={coffee.origin}
                 price={coffee.price}
                 roast={coffee.roast}
-                quantity={coffee.poundsLeft}
+                quantity={coffee.poundsLeft || 0}
                 onClick={() => handleCoffeeClick(coffee)}
                 onAddToBag={() => props.onAddToBag(coffee)}
               />

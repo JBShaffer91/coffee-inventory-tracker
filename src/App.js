@@ -29,11 +29,11 @@ function App() {
       const updatedCoffees = [...prevCoffees];
       const index = updatedCoffees.findIndex(coffee => coffee.id === editedCoffee.id);
       if (index !== -1) {
-        updatedCoffees[index] = editedCoffee;
+        updatedCoffees[index] = {...updatedCoffees[index], ...editedCoffee};
       }
       return updatedCoffees;
     });
-  };
+  };  
 
   const handleAddOrUpdateCoffee = (newCoffee, quantity) => {
     const existingCoffeeIndex = coffees.findIndex(c => c.name === newCoffee.name);
