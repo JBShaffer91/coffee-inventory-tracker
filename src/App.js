@@ -4,7 +4,7 @@ import CoffeeList from './components/CoffeeList';
 import AddCoffeeForm from './components/AddCoffeeForm';
 import Bag from './components/Bag';
 import Footer from './components/Footer';
-import './App.css';
+import './styles/App.css';
 
 function App() {
   const [coffees, setCoffees] = useState([

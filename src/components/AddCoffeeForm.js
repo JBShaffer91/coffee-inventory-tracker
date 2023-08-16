@@ -78,9 +78,9 @@ function AddCoffeeForm(props) {
           onChange={(e) => setPrice(e.target.value)}
         />
         <select value={roast} onChange={(e) => setRoast(e.target.value)}>
-          <option value="light">Light</option>
-          <option value="medium">Medium</option>
-          <option value="dark">Dark</option>
+          <option value="Light">Light</option>
+          <option value="Medium">Medium</option>
+          <option value="Dark">Dark</option>
         </select>
         <input
           type="number"
