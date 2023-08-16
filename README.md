@@ -16,6 +16,10 @@ A React-based web application designed to manage the inventory of different coff
 
 - Responsive Design: Styled with a modern Navy Blue and Bone White color palette and a consistent Box Model design.
 
+## Component Diagram
+
+![Component Diagram](./assets/CoffeeDiagram.draw.io.png)
+
 ## Technology
 
 - React: Used for building the user interface components.

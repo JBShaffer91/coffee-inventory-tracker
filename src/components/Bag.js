@@ -7,6 +7,20 @@ function Bag(props) {
     props.onOrder();
   };
 
+  const handleIncreaseQuantity = (item) => {
+    if (item.quantity < item.poundsLeft) {
+      props.onUpdateItem(item.id, item.quantity + 1);
+    } else {
+      alert(`Sorry, we don't have enough stock for ${item.name}.`);
+    }
+  };
+
+  const handleDecreaseQuantity = (item) => {
+    if (item.quantity > 1) {
+      props.onUpdateItem(item.id, item.quantity - 1);
+    }
+  };
+
   return (
     <div className="bag-container">
       <h3>Your Bag</h3>
@@ -14,8 +28,8 @@ function Bag(props) {
         {props.bagItems.map((item, index) => (
           <li key={index}>
             <span>{item.name} - {item.quantity} lbs</span>
-            <button onClick={() => props.onUpdateItem(item.id, item.quantity + 1)}>+</button>
-            <button onClick={() => props.onUpdateItem(item.id, item.quantity - 1)}>-</button>
+            <button onClick={() => handleIncreaseQuantity(item)}>+</button>
+            <button onClick={() => handleDecreaseQuantity(item)}>-</button>
             <button onClick={() => props.onRemoveItem(item.id)}>Remove</button>
           </li>
         ))}

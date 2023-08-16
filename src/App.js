@@ -8,16 +8,16 @@ import './App.css';
 
 function App() {
   const [coffees, setCoffees] = useState([
-    { id:1, name: 'Espresso', origin: 'Italy', price: '$10', roast: 'dark', poundsLeft: 130 },
-    { id:2, name: 'Americano', origin: 'USA', price: '$8', roast: 'medium', poundsLeft: 130 },
-    { id:3, name: 'Latte', origin: 'France', price: '$12', roast: 'light', poundsLeft: 130 },
-    { id:4, name: 'Cortado', origin: 'Spain', price: '$9', roast: 'medium-dark', poundsLeft: 130 },
-    { id:5, name: 'Flat White', origin: 'Australia', price: '$11', roast: 'medium', poundsLeft: 130 },
-    { id:6, name: 'Café Cubano', origin: 'Cuba', price: '$7', roast: 'dark', poundsLeft: 130 },
-    { id:7, name: 'Turkish Coffee', origin: 'Turkey', price: '$13', roast: 'dark', poundsLeft: 130 },
-    { id:8, name: 'Café de Olla', origin: 'Mexico', price: '$6', roast: 'medium', poundsLeft: 130 },
-    { id:9, name: 'Ethiopian Buna', origin: 'Ethiopia', price: '$14', roast: 'light', poundsLeft: 130 },
-    { id:10, name: 'Brazilian Cafezinho', origin: 'Brazil', price: '$5', roast: 'medium-dark', poundsLeft: 130 }
+    { id:1, name: 'Espresso', origin: 'Italy', price: '$10', roast: 'Dark', poundsLeft: 130 },
+    { id:2, name: 'Americano', origin: 'USA', price: '$8', roast: 'Medium', poundsLeft: 130 },
+    { id:3, name: 'Latte', origin: 'France', price: '$12', roast: 'Light', poundsLeft: 130 },
+    { id:4, name: 'Cortado', origin: 'Spain', price: '$9', roast: 'Medium', poundsLeft: 130 },
+    { id:5, name: 'Flat White', origin: 'Australia', price: '$11', roast: 'Medium', poundsLeft: 130 },
+    { id:6, name: 'Café Cubano', origin: 'Cuba', price: '$7', roast: 'Dark', poundsLeft: 130 },
+    { id:7, name: 'Turkish Coffee', origin: 'Turkey', price: '$13', roast: 'Dark', poundsLeft: 130 },
+    { id:8, name: 'Café de Olla', origin: 'Mexico', price: '$6', roast: 'Medium', poundsLeft: 130 },
+    { id:9, name: 'Ethiopian Buna', origin: 'Ethiopia', price: '$14', roast: 'Light', poundsLeft: 130 },
+    { id:10, name: 'Brazilian Cafezinho', origin: 'Brazil', price: '$5', roast: 'Medium', poundsLeft: 130 }
   ]);
 
   const handleDeleteCoffee = (coffeeToDelete) => {
@@ -95,7 +95,7 @@ function App() {
         prevBag.forEach(item => {
           const coffeeIndex = updatedCoffees.findIndex(c => c.id === item.id);
           if (coffeeIndex !== -1) {
-            updatedCoffees[coffeeIndex].poundsLeft -= item.quantity;
+            updatedCoffees[coffeeIndex].poundsLeft = Math.max(0, updatedCoffees[coffeeIndex].poundsLeft - item.quantity);
           }
         });
         setCoffees(updatedCoffees);
@@ -104,7 +104,7 @@ function App() {
     } else {
       alert(`Sorry, we don't have enough stock for the following items: ${outOfStockItems.join(', ')}`);
     }
-  };  
+  };    
 
   const validCoffees = coffees.filter(coffee => coffee.origin && coffee.price && coffee.roast);
 
