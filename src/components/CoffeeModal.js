@@ -45,7 +45,7 @@ function CoffeeModal(props) {
         <input type="text" value={editedCoffee.roastDate} onChange={e => setEditedCoffee({ ...editedCoffee, roastDate: e.target.value })} />
 
         <button onClick={handleSave}>Save</button>
-        <button onClick={() => onDelete(coffee)}>Delete</button>
+        <button onClick={() => { onDelete(coffee); onClose(); }}>Delete</button>
       </div>
     </div>
   );

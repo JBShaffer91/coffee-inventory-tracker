@@ -38,7 +38,7 @@ function AddCoffeeForm(props) {
     setName('');
     setOrigin('');
     setPrice('');
-    setRoast('');
+    setRoast('light');
     setQuantity(1);
   };
 
