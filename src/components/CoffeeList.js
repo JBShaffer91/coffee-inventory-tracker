@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import CoffeeItem from './CoffeeItem';
 import CoffeeModal from './CoffeeModal';
-import './CoffeeList.css';
+import '../styles/CoffeeList.css';
 
 function CoffeeList(props) {
   const [selectedCoffee, setSelectedCoffee] = useState(null);

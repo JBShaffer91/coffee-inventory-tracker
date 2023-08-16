@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './CoffeeItem.css';
+import '../styles/CoffeeItem.css';
 
 function CoffeeItem(props) {
   const handleAddToBagClick = (event) => {

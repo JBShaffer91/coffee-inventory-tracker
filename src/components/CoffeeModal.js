@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './CoffeeModal.css';
+import '../styles/CoffeeModal.css';
 
 function CoffeeModal(props) {
   const { coffee, onClose, onDelete, onEdit } = props;

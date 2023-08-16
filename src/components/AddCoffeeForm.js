@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './AddCoffeeForm.css';
+import '../styles/AddCoffeeForm.css';
 
 function AddCoffeeForm(props) {
   const [name, setName] = useState('');

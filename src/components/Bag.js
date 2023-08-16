@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Bag.css';
+import '../styles/Bag.css';
 
 function Bag(props) {
   const handleOrderClick = () => {
