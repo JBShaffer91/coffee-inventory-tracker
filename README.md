@@ -18,7 +18,7 @@ A React-based web application designed to manage the inventory of different coff
 
 ## Component Diagram
 
-![Component Diagram](./assets/CoffeeDiagram.draw.io.png)
+![Component Diagram](./assets/CoffeeDiagram.drawio.png)
 
 ## Technology
 
@@ -70,7 +70,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 MIT License
 
-Copyright (c) 2023 Justin Shaffer
+Copyright (c) 2023 Justin B. Shaffer
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
